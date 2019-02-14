@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
 import  {ScrollView} from 'react-native'
-import {Container, Header, Left, Title, Body} from 'native-base'
+import {Container, Header, Left, Title, Body, Right} from 'native-base'
 import _ from 'lodash';
 import { connect } from 'react-redux';
 import {getPhotoList} from '../actions'
 import PhotoDetail from './getPhotoList'
+import {Icon} from 'react-native-elements'
 class Timeline extends Component{
     componentDidMount() {
         this.props.getPhotoList();
@@ -23,11 +24,14 @@ class Timeline extends Component{
             <Container>
                 <Header>
                 <Left>
-                <Title>Instagram</Title>       
-            </Left>
-                <Body>
-                   
-                </Body>
+                <Icon name='monochrome-photos' color='white' size={25}/>
+                </Left>
+            <Body >
+            <Title>Instagram</Title>
+            </Body>
+            <Right>
+                
+            </Right>
                 </Header>
             <ScrollView style={{flex:1}}>
 {this.renderPhoto()}

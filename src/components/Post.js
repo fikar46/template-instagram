@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
 import  {Text, View} from 'react-native'
-import {Container, Header, Left, Title, Body} from 'native-base'
+import {Container, Header, Left, Title, Body,Right} from 'native-base'
 import { connect } from 'react-redux';
 import {photoCreate} from '../actions'
 import PhotoForm from './photoForm';
 import {Card, CardSection, Button} from './common'
+import {Icon} from 'react-native-elements'
 class Post extends Component{
     onButtonPress = () => {
         const { photo, caption } = this.props;
@@ -21,11 +22,14 @@ class Post extends Component{
             <Container>
                 <Header>
                 <Left>
-                <Title>Instagram</Title>       
-            </Left>
-                <Body>
-                   
-                </Body>
+                <Icon name='monochrome-photos' color='white' size={25}/>
+                </Left>
+            <Body >
+            <Title>Instagram</Title>
+            </Body>
+            <Right>
+                
+            </Right>
                 </Header>
             <View>
             <Card>

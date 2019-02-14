@@ -67,12 +67,13 @@ class LoginForm extends Component {
             <Container>
             <Header >
                 <Left>
-                <Title>NFChat</Title>
+                <Icon name='monochrome-photos' color='white' size={25}/>
                 </Left>
             <Body >
-              
+            <Title>Instagram</Title>
             </Body>
-            
+            <Right>
+            </Right>
         </Header>
             <View>
             <Text style={styles.titleTextStyle}>Login Disini</Text>

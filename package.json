@@ -11,6 +11,7 @@
     "lodash": "^4.17.11",
     "native-base": "^2.11.0",
     "react": "16.6.3",
+    "react-firebaseui": "^3.1.2",
     "react-native": "0.58.4",
     "react-native-elements": "^1.0.0",
     "react-native-vector-icons": "^6.2.0",

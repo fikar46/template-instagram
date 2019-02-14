@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
 import {Card, CardSection} from './common'
+import { Thumbnail } from 'native-base';
+
 
 class PhotoDetail extends Component{
     render(){
@@ -14,8 +16,7 @@ class PhotoDetail extends Component{
             <Card>
                 <CardSection>
                 <View style={thumbnailContainerStyle}>
-                        <Image source={{ uri: 'https://'+photo }}
-                               style={thumbnailStyle}/>
+                               <Thumbnail source={{ uri: 'https://'+photo }} />
                     </View>
                     <View style={headerContentStyle}>
                         <Text style={headerTextStyle}>{email}</Text>
@@ -37,9 +38,6 @@ class PhotoDetail extends Component{
 }
 
 const styles = { 
-    thumbnailStyle: {
-        height: 50,
-        width: 50 },
     headerContentStyle: {
             justifyContent: 'space-around'
         },

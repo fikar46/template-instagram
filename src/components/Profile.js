@@ -44,8 +44,11 @@ class Profile extends Component{
             <Container>
                 <Header>
                 <Left>
-                <Title>Instagram</Title>
-            </Left>
+                <Icon name='monochrome-photos' color='white' size={25}/>
+                </Left>
+            <Body >
+            <Title>Instagram</Title>
+            </Body>
                 <Right>
                     <Icon name='exit-to-app' color='white' size={25} onPress={this.logOut}/>
                 </Right>
