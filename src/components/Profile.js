@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
 import  {Text, View,ScrollView} from 'react-native'
-import {Container, Header, Left, Title, Body} from 'native-base'
+import {Container, Header, Left, Title, Body, Right} from 'native-base'
 import {connect} from 'react-redux';
 import _ from 'lodash';
 import PhotoDetail from './getPhotoList'
 import {logoutUser,getPhotoList} from '../actions'
 import { Card, CardSection, Button } from './common';
+import {Icon} from 'react-native-elements'
 class Profile extends Component{
     state ={email:''}
     componentDidMount(){
@@ -45,22 +46,17 @@ class Profile extends Component{
                 <Left>
                 <Title>Instagram</Title>
             </Left>
-                <Body>
-                   
-                </Body>
+                <Right>
+                    <Icon name='exit-to-app' color='white' size={25} onPress={this.logOut}/>
+                </Right>
                 </Header>
-            <View style={{justifyContent: 'center'}}>
+            <View style={{justifyContent: 'center', flex:1}}>
             <Card>
                     <CardSection>
                         <Text>Email: {this.state.email}</Text>
                     </CardSection>
-                    <CardSection>
-                        <Button onPress={this.logOut}>
-                            Log Out
-                        </Button>
-                    </CardSection>
                 </Card>
-            <ScrollView>
+            <ScrollView >
                     {this.renderPhoto()}
             </ScrollView>
             </View>

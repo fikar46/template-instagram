@@ -1,13 +1,11 @@
 import React,{Component} from 'react';
 import {StackNavigator} from 'react-navigation';
 import LoginForm from './LoginForm';
-import RegistForm from './RegistForm';
 import { connect } from 'react-redux';
 import { StackActions, NavigationActions } from 'react-navigation';
 const RootStack = StackNavigator(
 {
     Login: {screen: LoginForm},
-    Regist: {screen: RegistForm},
 },
 {
     initialRouteName: 'Login',

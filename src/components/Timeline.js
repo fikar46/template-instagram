@@ -29,7 +29,7 @@ class Timeline extends Component{
                    
                 </Body>
                 </Header>
-            <ScrollView>
+            <ScrollView style={{flex:1}}>
 {this.renderPhoto()}
             </ScrollView>
             </Container>
