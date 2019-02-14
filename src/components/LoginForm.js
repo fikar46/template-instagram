@@ -99,9 +99,6 @@ class LoginForm extends Component {
             <CardSection>
                 {this.renderButton()}
             </CardSection>
-            <CardSection>
-                 <Button title="Registrasi disini" onPress={() => this.props.navigation.navigate('Regist')}>Registrasi disini</Button>
-            </CardSection>
         </Card>
         </View>
         </Container>
