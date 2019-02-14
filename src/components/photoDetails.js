@@ -1,30 +1,14 @@
-import React, { Component } from 'react';
-import { View, Text, Image,ScrollView } from 'react-native';
-import {Card, CardSection} from './common'
-import { Thumbnail,Button } from 'native-base';
-import {photoUpdate} from '../actions'
-import _ from 'lodash';
+import React,{Component} from 'react'
 import { connect } from 'react-redux';
-
+import { Card, CardSection } from './common';
+import { View } from 'native-base';
+import { Thumbnail } from 'native-base';
 class PhotoDetail extends Component{
-    onRowPress = () => {
-        _.each(this.props.album, (value, prop) => {
-            this.props.photoUpdate(prop, value);
-        });
-        // for (const prop in this.props.employee) {
-        //     this.props.employeeUpdate(prop, this.props.employee[prop]);
-        // }
-        // this.props.Navigation.navigate('photoDetail'); nanti harus di kelarin
-    }
     render(){
-        const { photo, caption ,email,uid} = this.props.album;
-        const { headerContentStyle, 
-                headerTextStyle,
-                thumbnailStyle,
-                thumbnailContainerStyle,
-                imageStyle } = styles;
+        const {photo,caption,uid} = this.props
         return(
-            <Card>
+            <View>
+                <Card>
                 <CardSection>
                 <View style={thumbnailContainerStyle}>
                                <Thumbnail source={{ uri: 'https://'+photo }} />
@@ -46,19 +30,16 @@ class PhotoDetail extends Component{
             <CardSection>
                 <View style={{flex:1,height:null}}>
                 <ScrollView>
-                <Button transparent onPress={this.onRowPress}>
-                <Text style={{color: 'blue'}}>View All Comment</Text>
-                </Button>
                 <Text>Comment</Text>
                 <Text>Comment</Text>
                 </ScrollView>
                 </View>
             </CardSection>
-            </Card>
-        );
+                </Card>
+            </View>
+        )
     }
 }
-
 const styles = { 
     headerContentStyle: {
         justifyContent: 'space-around'
@@ -79,4 +60,10 @@ const styles = {
         resizeMode: 'contain'
     }
 }
-export default connect(null, { photoUpdate })(PhotoDetail);
+const mapStateToProps = (state) => {
+    const { photo, caption ,email,uid } = state.photoForm;
+
+    return { photo, caption ,email,uid };
+};
+
+export default connect( mapStateToProps, {})(PhotoDetail);
