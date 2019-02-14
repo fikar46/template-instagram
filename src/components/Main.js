@@ -9,7 +9,7 @@ export default createStackNavigator(
             screen: Authentication
         },
         MainMenu: {
-            screen: Screen
+            screen:  ({ navigation }) => <Screen screenProps={{ rootNavigation: navigation }} />
         }
     },
     {
